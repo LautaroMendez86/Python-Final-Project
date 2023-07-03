@@ -4,10 +4,11 @@ from Model.DTO.ContactForDelete import ContactForDelete
 from Model.DTO.ContactForUpdate import ContactForUpdate
 from Model.DTO.UserForView import UserForView
 
-class ContactView:    
+
+class ContactView:
     def __init__(self, user):
         self.user_logged = user
-    
+
     def Menu(self):
         while True:
             system("cls")
@@ -53,8 +54,10 @@ class ContactView:
         print("-"*50)
         email = input("Ingrese el email del contacto: ")
         print("-"*50)
+        instagram_user = input("Ingrese el Instagram del contacto: ")
+        print("-"*50)
         contactC = ContactController()
-        contactC.add_contact(ContactForUpdate(0, name, surname, email, self.user_logged.username))
+        contactC.add_contact(ContactForUpdate(0, name, surname, email, instagram_user, self.user_logged.username))
         input(" Presione enter para continuar ".center(50, "!"))
 
     def editContact(self):
@@ -69,8 +72,10 @@ class ContactView:
         print("-"*50)
         email = input("Ingrese el email del contacto: ")
         print("-"*50)
+        instagram_user = input("Ingrese el Instagram del contacto: ")
+        print("-"*50)
         contactC = ContactController()
-        contactC.update_contact(ContactForUpdate(id, name, surname, email, self.user_logged.username))
+        contactC.update_contact(ContactForUpdate(id, name, surname, email, instagram_user, self.user_logged.username))
         input(" Presione enter para continuar ".center(50, "!"))
 
     def deleteContact(self):

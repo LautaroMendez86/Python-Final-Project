@@ -3,9 +3,9 @@ import mysql.connector
 class Context:
     def __init__(self) -> None:
         self.mydb = mysql.connector.connect(
-        host="localhost",
+        host="172.20.0.3",
         user="root",
-        password="root",
+        password="mysql",
         database="contacts"
         )
         self.mycursor = self.mydb.cursor()
