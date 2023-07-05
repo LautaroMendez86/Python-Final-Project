@@ -12,6 +12,15 @@ class ContactController:
             contactsForView.append(contactForView)
         return contactsForView
     
+    def get_contacts_with_ig_by_user(self, username):
+        contact_repository = ContactRepository()
+        contacts = contact_repository.get_contacts_with_ig_by_user(username)
+        contactsForView = []
+        for contact in contacts:
+            contactForView = ContactForView(contact)
+            contactsForView.append(contactForView)
+        return contactsForView
+    
     def get_contact(self, contact):
         contact_repository = ContactRepository()
         contact = contact_repository.get_contact(contact)

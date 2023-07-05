@@ -3,7 +3,7 @@ import mysql.connector
 class Context:
     def __init__(self) -> None:
         self.mydb = mysql.connector.connect(
-        host="172.20.0.3",
+        host="172.20.0.2",
         user="root",
         password="mysql",
         database="contacts"

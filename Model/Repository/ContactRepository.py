@@ -22,6 +22,25 @@ class ContactRepository:
             contacts.append(contact)
         return contacts
     
+    def get_contacts_with_ig_by_user(self, username):
+        with Context() as context1:
+            query = 'SELECT * FROM contact WHERE state = 1 && username = %s && instagram_user != ""'
+            values = (username,)
+            context1.mycursor.execute(query,values)
+            contactsDB = context1.mycursor.fetchall()
+        contacts = []
+        for contactDB in contactsDB:
+            contact = Contact()
+            contact.id = contactDB[0]
+            contact.name = contactDB[1]
+            contact.surname = contactDB[2]
+            contact.email = contactDB[3]
+            contact.username = contactDB[4]
+            contact.state = contactDB[5]
+            contact.instagram_user = contactDB[6]
+            contacts.append(contact)
+        return contacts
+    
     def get_contact(self, contact):
         with Context() as context1:
             query = "SELECT * FROM contact WHERE idcontact = %s"

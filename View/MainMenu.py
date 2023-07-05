@@ -8,7 +8,7 @@ class MainMenu:
     @classmethod
     def Menu(cls):
         while True:
-            system("cls")
+            system("clear")
             print(" Bienvenido a la agenda de contactos ".center(50, "#"))
             print("1. Login de usuario")
             print("2. Registro de usuario")

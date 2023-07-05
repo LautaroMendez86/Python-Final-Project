@@ -15,6 +15,6 @@ class ContactForView:
         self.id = contact.id
 
     def __str__(self) -> str:
-        return f"Nombre: {self.name} - Apellido: {self.surname} - Email: {self.email} - Instagram: {self.instagram_user and '@' + self.instagram_user or 'No tiene cuenta'} - Id: {self.id}"
+        return f"Nombre: {self.name} - Apellido: {self.surname} - Email: {self.email} - Instagram: {self.instagram_user and '@' + self.instagram_user or 'No tiene una cuenta'} - Id: {self.id}"
 
     
