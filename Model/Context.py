@@ -1,12 +1,12 @@
 import mysql.connector
-
+from decouple import config
 class Context:
     def __init__(self) -> None:
         self.mydb = mysql.connector.connect(
-        host="172.20.0.2",
-        user="root",
-        password="mysql",
-        database="contacts"
+        host = config("MYSQL_HOST"),
+        user = config("MYSQL_USER"),
+        password = config("MYSQL_PASSWORD"),
+        database = config("MYSQL_DATABASE")
         )
         self.mycursor = self.mydb.cursor()
         print(" Info Base Datos: Conexion abierta ".center(40, "*"))
