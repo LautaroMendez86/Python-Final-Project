@@ -9,7 +9,7 @@ class UserView:
 
     @classmethod
     def addUserMenu(cls):
-        system("cls")
+        system("clear")
         print(" Alta de usuario ".center(50, "#"))
         print("-"*50)
         username = input("Ingrese el nombre de usuario: ")
@@ -30,7 +30,7 @@ class UserView:
     
     @classmethod
     def loginMenu(cls):
-        system("cls")
+        system("clear")
         print(" Login de usuario ".center(50, "#"))
         print("-"*50)
         username = input("Ingrese el nombre de usuario: ")
@@ -45,7 +45,7 @@ class UserView:
     
     @classmethod
     def listUsers(cls):
-        system("cls")
+        system("clear")
         print(" Listado de usuarios ".center(50, "#"))
         userC = UserController()
         users = userC.get_users()

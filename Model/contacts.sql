@@ -25,7 +25,7 @@ CREATE TABLE `contact` (
 
 
 ALTER TABLE contact 
-ADD instagram_user varchar(45);
+ADD instagram_user varchar(45) DEFAULT NULL;
 
 
 
