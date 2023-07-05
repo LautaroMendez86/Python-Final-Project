@@ -1,4 +1,5 @@
 CREATE DATABASE `contacts` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE contacts;
 
 CREATE TABLE `user` (
   `username` varchar(45) NOT NULL,
@@ -23,7 +24,8 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-
+ALTER TABLE contact 
+ADD instagram_user varchar(45);
 
 
 

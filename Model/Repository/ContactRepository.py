@@ -18,6 +18,7 @@ class ContactRepository:
             contact.email = contactDB[3]
             contact.username = contactDB[4]
             contact.state = contactDB[5]
+            contact.instagram_user = contactDB[6]
             contacts.append(contact)
         return contacts
     
@@ -34,21 +35,23 @@ class ContactRepository:
             contact.email = contactDB[3]
             contact.username = contactDB[4]
             contact.state = contactDB[5]
+            contact.instagram_user = contactDB[6]
         return contact
     
     def add_contact(self, contact):
         with Context() as context1:
-            query = "INSERT INTO contact (name, surname, email, username, state) VALUES (%s, %s, %s, %s, %s)"
-            values = (contact.name, contact.surname, contact.email, contact.username, contact.state)
+            query = "INSERT INTO contact (name, surname, email, username, instagram_user, state) VALUES (%s, %s, %s, %s, %s, %s)"
+            values = (contact.name, contact.surname, contact.email, contact.username, contact.instagram_user, contact.state)
             context1.mycursor.execute(query, values)
             context1.mydb.commit()
             contact.id = context1.mycursor.lastrowid
         return contact
 
     def update_contact(self, contact):
+        print(contact.name, contact.surname, contact.email, contact.id, contact.instagram_user, contact.username)
         with Context() as context1:
-            query = "UPDATE contact SET name = %s, surname = %s, email = %s WHERE idcontact = %s AND username = %s"
-            values = (contact.name, contact.surname, contact.email, contact.id, contact.username)
+            query = "UPDATE contact SET name = %s, surname = %s, email = %s, instagram_user = %s WHERE idcontact = %s AND username = %s"
+            values = (contact.name, contact.surname, contact.email, contact.instagram_user, contact.id, contact.username)
             context1.mycursor.execute(query, values)
             context1.mydb.commit()
 
